@@ -2,7 +2,7 @@ Options +FollowSymlinks
 RewriteEngine On
 
 # Cambiar aquí la ruta y poner la ruta del folder actual
-RewriteBase /api_web_backup
+RewriteBase /YOUR_FOLDER_NAME
 
 # Descomentar lineas de abajo para activar redireccion https y www 
 
