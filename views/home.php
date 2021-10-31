@@ -1,4 +1,5 @@
-<?php ?>
+<?php echo ''; ?>
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -249,7 +250,6 @@
                         if(data.mediaType.toLowerCase() === 'tvshow' || data.mediaType.toLowerCase() === 'all') {
 
                             let tvShows = data.searchResults.tvShows;
-
                             if(tvShows !== undefined) {
 
                                 tvShows.forEach(tvShow => {
@@ -257,7 +257,6 @@
 
 
                                     let searchSource = tvShow.searchSource;
-
                                     if(searchSource.toLowerCase() === 'tvmaze') {
 
                                         shows.push({
@@ -272,7 +271,7 @@
 
                                     if(searchSource.toLowerCase() === 'itunes') {
 
-                                        shows.push(app.iTunesSource(movie, searchSource));
+                                        shows.push(app.iTunesSource(tvShows, searchSource));
 
                                     }
 
