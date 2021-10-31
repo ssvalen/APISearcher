@@ -36,7 +36,6 @@ Para implementar las opciones de búsqueda debemos agregar la variable **&media=
 https://www.apisearcher.oficinacentral.info/api?search=<search_parameter>&media=<media_parameter>
 ```
 
-
 Por ejemplo, si queremos buscar solo películas, la URL quedaría de esta manera:
 
 ```
