@@ -1,0 +1,24 @@
+Options +FollowSymlinks
+RewriteEngine On
+
+# Cambiar aquí la ruta y poner la ruta del folder actual
+RewriteBase /api_web_backup
+
+# Descomentar lineas de abajo para activar redireccion https y www 
+
+# Redirigir las URLs "antiguas" a las nuevas URLs "bonitas"
+# RewriteCond %{ENV:REDIRECT_STATUS} ^$
+# RewriteCond %{QUERY_STRING} ^r=(.*)
+# RewriteRule ^index\.php$ /%1 [QSD,R=302,L]
+
+# Canonicalizar la URL - eliminar las www y redirigir a HTTPS
+# RewriteCond %{HTTPS} off [OR]
+# RewriteCond %{HTTP_HOST} ^www\. [NC]
+# RewriteCond %{HTTP_HOST} ^(?:www\.)?(.+)$ [NC]
+# RewriteRule ^ https://%1%{REQUEST_URI} [L,NE,R=301]
+
+# Reescribir internamente la URL "bonita"
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ index.php?r=$1 [L,QSA]
